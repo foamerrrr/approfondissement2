@@ -38,6 +38,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
 
+        $admin->assignRole($adminRole);
+
         // Produits de l'admin
         Product::factory()->count(3)->create([
             'user_id' => $admin->id,
