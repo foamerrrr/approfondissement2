@@ -24,6 +24,7 @@
                                     Voir
                                 </a>
                                 <br />
+                                @can('manage-product', $product)
                                 {{-- Modifier --}}
                                 <a href="{{ route('products.edit', $product) }}" class="ml-2 text-green-600 underline">
                                     Modifier
@@ -38,6 +39,7 @@
                                         Supprimer
                                     </button>
                                 </form>
+                                @endcan
                             </li>
                         @endforeach
                     </ul>
