@@ -26,11 +26,12 @@
                                     </a>
                                 @endcan
                                 <br />
-                                @can('update', $product)
                                 {{-- Modifier --}}
-                                <a href="{{ route('products.edit', $product) }}" class="ml-2 text-green-600 underline">
-                                    Modifier
-                                </a>
+                                @can('update', $product)
+                                    <a href="{{ route('products.edit', $product) }}" class="ml-2 text-green-600 underline">
+                                        Modifier
+                                    </a>
+                                @endcan
 
                                 {{-- Supprimer --}}
                                 @can('delete', $product)
@@ -42,7 +43,6 @@
                                             Supprimer
                                         </button>
                                     </form>
-                                @endcan
                                 @endcan
                             </li>
                         @endforeach
