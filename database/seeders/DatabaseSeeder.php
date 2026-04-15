@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
 
         $adminRole = Role::firstOrCreate(['name' => 'admin']);
         $viewDashboardPermission = Permission::firstOrCreate(['name' => 'view dashboard']);
-        $adminRole->givePermissionTo($viewDashboardPermission);
 
        // Utilisateur "admin"
         $admin = User::factory()->create([
@@ -38,8 +37,6 @@ class DatabaseSeeder extends Seeder
             'email'    => 'user@example.com',
             'password' => bcrypt('password'),
         ]);
-
-        $admin->assignRole($adminRole);
 
         // Produits de l'admin
         Product::factory()->count(3)->create([
