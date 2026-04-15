@@ -26,18 +26,16 @@ class DatabaseSeeder extends Seeder
         $adminRole->givePermissionTo($viewDashboardPermission);
 
        // Utilisateur "admin"
-        $admin = User::updateOrCreate([
-            'email'    => 'admin@example.com',
-        ], [
+        $admin = User::factory()->create([
             'name'     => 'Admin',
+            'email'    => 'admin@example.com',
             'password' => bcrypt('password'),
         ]);
 
         // Utilisateur "user"
-        $user = User::updateOrCreate([
-            'email'    => 'user@example.com',
-        ], [
+        $user = User::factory()->create([
             'name'     => 'User',
+            'email'    => 'user@example.com',
             'password' => bcrypt('password'),
         ]);
 
