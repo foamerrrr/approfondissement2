@@ -54,6 +54,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        $this->authorize('view-product', $product);
+
         return view('products.show', compact('product'));
     }
 

@@ -20,6 +20,15 @@
                                class="text-blue-600 underline">
                                 Modifier le produit
                             </a>
+
+                            <form action="{{ route('products.destroy', $product) }}" method="POST" class="inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="ml-2 text-red-600 underline"
+                                    onclick="return confirm('Supprimer ce produit ?')">
+                                    Supprimer
+                                </button>
+                            </form>
                         @endcan
                         <a href="{{ route('products.index') }}" class="ms-4 text-gray-600 underline">
                             ← Retour à la liste
